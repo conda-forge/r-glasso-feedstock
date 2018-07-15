@@ -1,4 +1,4 @@
-{% set version = '1.8' %}
+{% set version = "1.10" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -13,7 +13,7 @@ source:
     - https://cran.r-project.org/src/contrib/glasso_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/glasso/glasso_{{ version }}.tar.gz
 
-  sha256: fc9ba74519388c194e14bae39d41f3fec8c2aade0177df364f61753f0fbf8a3d
+  sha256: e6fa74139a2b5f475f134cc0d6b4000ed870beb5865294e9f1d68b4d42bf505b
 
 build:
   number: 0
