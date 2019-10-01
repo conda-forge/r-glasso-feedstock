@@ -1,4 +1,4 @@
-{% set version = '1.10' %}
+{% set version = "1.11" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/glasso_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/glasso/glasso_{{ version }}.tar.gz
-  sha256: e6fa74139a2b5f475f134cc0d6b4000ed870beb5865294e9f1d68b4d42bf505b
+  sha256: 4c37844b26f55985184a734e16b8fe880b192e3d2763614b0ab3f99b4530e30a
 
 build:
   merge_build_host: True  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
