@@ -43,11 +43,12 @@ test:
 
 about:
   home: http://www-stat.stanford.edu/~tibs/glasso
-  license: GPL-2
+  license: GPL-2.0-or-later
   summary: Estimation of a sparse inverse covariance matrix using a lasso (L1) penalty. Facilities
     are provided for estimates along a path of values for the regularization parameter.
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
