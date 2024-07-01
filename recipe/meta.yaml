@@ -1,6 +1,5 @@
 {% set version = "1.11" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-glasso
@@ -13,8 +12,7 @@ source:
   sha256: 4c37844b26f55985184a734e16b8fe880b192e3d2763614b0ab3f99b4530e30a
 
 build:
-  merge_build_host: True  # [win]
-  number: 4
+  number: 5
   rpaths:
     - lib/R/lib/
     - lib/
@@ -22,7 +20,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('fortran') }}        # [not win]
     - {{ compiler('m2w64_fortran') }}  # [win]
     - {{ posix }}filesystem        # [win]
@@ -34,7 +34,6 @@ requirements:
     - r-base
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
 
 test:
   commands:
